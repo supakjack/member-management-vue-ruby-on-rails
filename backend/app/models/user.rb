@@ -22,5 +22,9 @@ class User < ApplicationRecord
 
   def has_role?(role)
     self.role.to_sym  == role.to_sym 
-  end       
+  end
+  
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
 end
